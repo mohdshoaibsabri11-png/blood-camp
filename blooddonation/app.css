@@ -1,0 +1,269 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+    --blood-red: #9C1C2C;
+    --dark-red: #7A1622;
+    --accent: #FF2D55;
+    --white: #ffffff;
+    --glass: rgba(255,255,255,0.1);
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--blood-red);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--blood-red), var(--dark-red));
+    display: flex;
+    align-items: center;
+    padding: 100px 40px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #ff4d6f;
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+.card {
+    background: var(--glass);
+    border: 1px solid rgba(255,45,85,0.3);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255,45,85,0.5);
+}
+
+/* =========================
+   BLOOD GRID
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+.progress {
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--accent);
+}
+
+/* =========================
+   FORMS
+========================= */
+input, select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* =========================
+   TOAST
+========================= */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    padding: 15px 25px;
+    border-radius: 20px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.blood-drop {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.heartbeat {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* =========================
+   EMERGENCY BAR
+========================= */
+.emergency {
+    background: var(--accent);
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: black;
+    padding: 40px;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
